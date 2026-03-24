@@ -105,7 +105,7 @@ $ make -j4
 
 ## running 
 output mode: 0=json, 1=video, 2=json+video 
-
-../YoloV8rt model_trt.engine video_id mode
-../YoloV8rt ../models/yolov8s.engine /dev/video0 0
-
+ 
+../YoloV8rt model_trt.engine video_id mode 
+../YoloV8rt ../models/yolov8s.engine /dev/video0 0 
+ 
