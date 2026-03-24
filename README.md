@@ -1,9 +1,10 @@
 # YoloV8 TensorRT Jetson Orin JetPack 6.2.*
 Based on https://github.com/Qengineering/YoloV8-TensorRT-Jetson_Nano 
+ 
 ## YoloV8 with the TensorRT framework. <br/>
 A lightweight C++ implementation of YoloV8 running on NVIDIAs TensorRT engine.<br>
 No additional libraries are required, just a few lines of code using software, found on every JetPack.<br><br>
-
+ 
 ## Model performance benchmark(FPS)
 
 All models are quantized to `FP16`.<br>
@@ -50,6 +51,7 @@ That's why we provide the underlying `onnx` models instead of the `engine` model
 You need your `trtexec` app on your Jetson to convert the model from onnx to the engine format.<br>
 Usually, `trtexec` is found in the `/usr/src/tensorrt/bin/` folder on your Jetson.<br>
 You could include this folder in your PATH with the next command.<br>
+
 ```script
 $ export "PATH=$PATH:/usr/src/tensorrt/bin/" >> ~/.bashrc
 $ source ~/.bashrc
@@ -66,8 +68,8 @@ or
   --fp16 \
   --memPoolSize=workspace:1024
 ```
-or 
-memPoolSize=workspace:2048 
+or  
+memPoolSize=workspace:2048  
 memPoolSize=workspace:4096 
 
 Please be patient, it will take minutes to complete the conversion.<br><br>
@@ -102,12 +104,12 @@ To extract and run the network in Code::Blocks <br/>
 ```
 $ mkdir *MyDir*
 $ cd *MyDir* 
-$ git clone --depth=1 https://github.com/Qengineering/YoloV8-TensorRT-Jetson-Orin.git
+$ git clone https://github.com/inaciose/YoloV8-TensorRT-Jetson-Orin.git
 ```
 
 
 ## build .
-You can use **Code::Blocks**.
+You can use **Code::Blocks**. a graphical ide
 - Load the project file *.cbp in Code::Blocks.
 - Select _Release_, not Debug.
 - Compile and run with F9.
@@ -116,7 +118,7 @@ You can use **Code::Blocks**.
 # run
 output mode: 0=json, 1=video, 2=json+video 
 ```
-bin/YoloV8rt ../models/yolov8s.engine /dev/video0 2
+bin/YoloV8rt models/yolov8s.engine /dev/video0 2
 ```
 
 Or use **Cmake**.
